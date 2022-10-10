@@ -11,43 +11,119 @@
 </head>
 
 <body>
-    <img id="logoCompleto" src="images/logoCompleto.png" alt="fortnite en letras blancas">
+    <div class="logo">
+        <img class="logoCompleto" src="images/logoCompleto.png" alt="fortnite en letras blancas">
+    </div>    
     <form>
         <fieldset id="datosPers">
-            <legend>Datos de contacto</legend>
             <h3>Nombre:</h3>
-            <input type="text" name="nombre" required pattern="[a-zA-Z]{4,15}"/>
+            <input type="text" name="nombre" required pattern="[a-zA-Z]{4,15}" />
             <h3>Apellidos:</h3>
             <input type="text" name="apellidos" required pattern="[a-zA-Z ]{5,50}" />
-            <h3>Fecha de nacimiento:</h3>
-            <input type="text" name="fechaNac" required pattern="[a-zA-Z ]{5,50}" />//-
+            <fieldset>
+                <label for="dia">
+                    <p>Día:</p>
+                </label>
+                <select id="dia" required>
+                    <option></option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                    <option>31</option>
+                </select>
+                <label for="mes">
+                    <p>Mes:</p>
+                </label>
+                <select id="mes" required>
+                    <option></option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+                <label for="anio">
+                    <p>Año:</p>
+                </label>
+                <input id="anio" type="text" name="anio" placeholder="1998" required pattern="^[0-9]{4}$" />
+            </fieldset>
             <h3>DNI:</h3>
-            <input type="text" name="dni" required pattern="^[0-9]{8}[- ]?[A-Z]{1}$" />
+            <input type="text" name="dni" required pattern="^[0-9]{8}[- ]?[A-Z]{1}$" />            
             <h3>Email:</h3>
-            <input type="mail" name="email" placeholder="ejemplo@ejemplo.com" required pattern="^[a-zA-Z0-9]{1,64}\S+@\D\S+\.\D\S+$" />
-            <input id="aEmail" onclick="anadirEmail()" type="button" value="Añadir">
+            <input type="mail" name="email" placeholder="ejemplo@ejemplo.com" required
+                pattern="^[a-zA-Z0-9]{1,64}\S+@\D\S+\.\D\S+$" />
+            <input id="aEmail" type="button" value="AñadirCorreo">
             <h3>Teléfono:</h3>
-            <input type="text" name="Telefono" placeholder="999 999 999" required
+            <input id="tlf" type="text" name="Telefono" placeholder="999 999 999" required
                 pattern="^[0-9]{3}[\s-]?[0-9]{3}[\s-]?[0-9]{3}$" />
-                <input id="aTlf"type="button" value="Añadir">
-                <img src="images/" alt="flecha derecha"><input type="submit" value="siguiente">
+            <input id="aTlf" type="button" value="AñadirTelefono">
+            <input class="icon-derecha" type="image" onclick="validaDatos();muestraCredenciales()" src="images/flecha-derecha.png" alt="flecha derecha" value="validar" >
         </fieldset>
-        
-        <fieldset>
+
+        <fieldset id="credenciales">
             <h3>Usuario</h3>
             <input type="text" name="usuario" placeholder="Nombre de usuario" minlength="5" maxlength="40" required
                 pattern="[A-Za-z0-9]+" />
             <h3>Contraseña</h3>
-            <input type="text" name="Contrasenia" placeholder="Contraseña" maxlength="35" />
+            <input type="text" name="Contrasenia" placeholder="Contraseña" maxlength="35" required/>
             <h3>Repite Contraseña</h3>
-            <input type="text" name="Contrasenia2" placeholder="Repite Contraseña" maxlength="35" />
+            <input type="text" name="Contrasenia2" placeholder="Repite Contraseña" maxlength="35" required/>
+            <input class="icon-derecha" type="image" src="images/flecha-derecha.png" alt="flecha derecha" value="validar" >
+            <input class="icon-izq" type="image" src="images/flecha-izq.png" alt="flecha izquierda" value="atras">
         </fieldset>
-        <input type="submit" value="Enviar">
 
-
+        <fieldset id="cuenta">
+            <h3>IBAN</h3>
+            <input id="iban" type="text" name="IBAN" placeholder="ES21 14650100722030876293" required/>
+            <h3>SWIFT</h3>
+            <input id="swift" type="text" name="SWIFT" placeholder="Contraseña" maxlength="35" required/>
+            <input class="icon-derecha" type="image" onclick="validaCuenta()" src="images/cheque.png" alt="flecha derecha" value="enviar">
+            <input class="icon-izq" type="image" src="images/flecha-izq.png" alt="flecha izquierda" value="atras">
+        </fieldset>
     </form>
     <p>Enlace recursos:</p>
-    <a href="https://www.flaticon.es/iconos-gratis/flecha-blanca" title="flecha blanca iconos">Flecha blanca iconos creados por Lizel Arina - Flaticon</a>
+    <a href="https://www.flaticon.es/iconos-gratis/flecha-blanca" title="flecha blanca iconos">Flecha blanca iconos
+        creados por Lizel Arina - Flaticon</a>
+    <a href="https://www.flaticon.es/iconos-gratis/anadir" title="añadir iconos">Añadir iconos creados por Pixel perfect
+        - Flaticon</a>
+    <a href="https://www.flaticon.es/iconos-gratis/cruzar" title="cruzar iconos">Cruzar iconos creados por hqrloveq -
+        Flaticon</a>
+    <a href="https://www.flaticon.es/iconos-gratis/aceptar" title="aceptar iconos">Aceptar iconos creados por Freepik -
+        Flaticon</a>
     <script src="js/myscript.js"></script>
 </body>
 

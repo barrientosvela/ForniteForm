@@ -2,9 +2,42 @@ body {
     background: linear-gradient(to left, #6ae2fd, #168fd8);
     font-family: sans-serif;
 }
-h1{
+
+label {
     font-family: monospace;
 }
-input:invalid{
-    border: 2px solid red;
+
+.logo {
+    width: 100%;
+}
+
+.logoCompleto {
+    display: block;
+    margin: auto;
+}
+
+form {
+    width: 70%;
+    display: block;
+    margin: auto;
+    padding-top: 20px;
+}
+
+fieldset {
+    border-style: none;
+    background-color: blue;
+    opacity: 0.5;
+}
+
+.icon-derecha {
+    width: 15%;
+    float: right;
+}
+
+.icon-izq {
+    width: 15%;
+    float: left;
+}
+#credenciales,#cuenta{
+    display: none;
 }
