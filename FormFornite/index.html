@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,46 @@
     <link rel="shortcut icon" href="images/fortniteLogo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <img id="logoCompleto" src="images/logoCompleto.png" alt="fortnite en letras blancas">
-    <form action=""></form>
+    <form>
+        <fieldset id="datosPers">
+            <legend>Datos de contacto</legend>
+            <h3>Nombre:</h3>
+            <input type="text" name="nombre" required pattern="[a-zA-Z]{4,15}"/>
+            <h3>Apellidos:</h3>
+            <input type="text" name="apellidos" required pattern="[a-zA-Z ]{5,50}" />
+            <h3>Fecha de nacimiento:</h3>
+            <input type="text" name="fechaNac" required pattern="[a-zA-Z ]{5,50}" />//-
+            <h3>DNI:</h3>
+            <input type="text" name="dni" required pattern="^[0-9]{8}[- ]?[A-Z]{1}$" />
+            <h3>Email:</h3>
+            <input type="mail" name="email" placeholder="ejemplo@ejemplo.com" required pattern="^[a-zA-Z0-9]{1,64}\S+@\D\S+\.\D\S+$" />
+            <input id="aEmail" onclick="anadirEmail()" type="button" value="Añadir">
+            <h3>Teléfono:</h3>
+            <input type="text" name="Telefono" placeholder="999 999 999" required
+                pattern="^[0-9]{3}[\s-]?[0-9]{3}[\s-]?[0-9]{3}$" />
+                <input id="aTlf"type="button" value="Añadir">
+                <img src="images/" alt="flecha derecha"><input type="submit" value="siguiente">
+        </fieldset>
+        
+        <fieldset>
+            <h3>Usuario</h3>
+            <input type="text" name="usuario" placeholder="Nombre de usuario" minlength="5" maxlength="40" required
+                pattern="[A-Za-z0-9]+" />
+            <h3>Contraseña</h3>
+            <input type="text" name="Contrasenia" placeholder="Contraseña" maxlength="35" />
+            <h3>Repite Contraseña</h3>
+            <input type="text" name="Contrasenia2" placeholder="Repite Contraseña" maxlength="35" />
+        </fieldset>
+        <input type="submit" value="Enviar">
+
+
+    </form>
+    <p>Enlace recursos:</p>
+    <a href="https://www.flaticon.es/iconos-gratis/flecha-blanca" title="flecha blanca iconos">Flecha blanca iconos creados por Lizel Arina - Flaticon</a>
+    <script src="js/myscript.js"></script>
 </body>
+
 </html>

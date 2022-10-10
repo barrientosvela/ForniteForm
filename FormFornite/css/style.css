@@ -1,6 +1,10 @@
 body {
     background: linear-gradient(to left, #6ae2fd, #168fd8);
+    font-family: sans-serif;
 }
 h1{
     font-family: monospace;
+}
+input:invalid{
+    border: 2px solid red;
 }
