@@ -16,81 +16,28 @@
     </div>
     <form>
         <fieldset id="datosPers">
-            <div>
-                <h3>Nombre:</h3>
-                <input type="text" name="nombre" required pattern="[a-zA-Z]{4,15}" />
-                <h3>Apellidos:</h3>
-                <input type="text" name="apellidos" required pattern="[a-zA-Z ]{5,50}" />
+            <div class="centro">
+                <p>Nombre:</p>
+                <input type="text" class="campos" name="nombre" required pattern="[a-zA-Z]{4,15}" />
+                <p>Apellidos:</p>
+                <input type="text" class="campos" name="apellidos" required pattern="[a-zA-Z ]{5,50}" />
                 <div id="FechaNacimiento">
-                    <p for="dia">
-                        <p>Día:</p>
-                    </p>
-                    <select id="dia" required>
-                        <option></option>
-                        <option>01</option>
-                        <option>02</option>
-                        <option>03</option>
-                        <option>04</option>
-                        <option>05</option>
-                        <option>06</option>
-                        <option>07</option>
-                        <option>08</option>
-                        <option>09</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
-                        <option>13</option>
-                        <option>14</option>
-                        <option>15</option>
-                        <option>16</option>
-                        <option>17</option>
-                        <option>18</option>
-                        <option>19</option>
-                        <option>20</option>
-                        <option>21</option>
-                        <option>22</option>
-                        <option>23</option>
-                        <option>24</option>
-                        <option>25</option>
-                        <option>26</option>
-                        <option>27</option>
-                        <option>28</option>
-                        <option>29</option>
-                        <option>30</option>
-                        <option>31</option>
-                    </select>
-                    <p for="mes">
-                        <p>Mes:</p>
-                    </p>
-                    <select id="mes" required>
-                        <option></option>
-                        <option>01</option>
-                        <option>02</option>
-                        <option>03</option>
-                        <option>04</option>
-                        <option>05</option>
-                        <option>06</option>
-                        <option>07</option>
-                        <option>08</option>
-                        <option>09</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
-                    </select>
-                    <p for="anio">
-                        <p>Año:</p>
-                    </p>
-                    <input id="anio" type="text" name="anio" placeholder="1998" required pattern="^[0-9]{4}$" />
+                    <p>Fecha de nacimiento:</p>
+                    <input id="anio" type="date" class="campos" name="anio" required />
+                    <img id="checkAnio" class="check" src="images/comprobar.png" alt="check">
                 </div>
-                <h3>DNI:</h3>
-                <input type="text" id="dni" required pattern="^[0-9]{8}[- ]?[A-Z]{1}$" />
-                <h3>Email:</h3>
-                <input type="mail" id="email" placeholder="ejemplo@ejemplo.com" required
-                    pattern="^[a-zA-Z0-9]{1,64}\S+@\D\S+\.\D\S+$" />
-                <input id="aEmail" type="button" value="AñadirCorreo">
-                <h3>Teléfono:</h3>
-                <input id="tlf" type="text" onchange="validaDatos()" name="Telefono" placeholder="999 999 999" required
-                    pattern="^[0-9]{3}[\s-]?[0-9]{3}[\s-]?[0-9]{3}$" />
+                <p>DNI:</p>
+                <input type="text" id="dni" class="campos" required pattern="^[0-9]{8}[- ]?[A-Z]{1}$" onblur="validaDNI()" />
+                <img id="checkDNI" class="check" src="images/comprobar.png" alt="check">
+                <p>Email:</p>
+                <input type="mail" id="email" class="campos" placeholder="ejemplo@ejemplo.com" required
+                    pattern="^[a-zA-Z0-9]{1,64}\S+@\D\S+\.\D\S+$" onblur="validaEmail()" />
+                <img id="checkEmail" class="check" src="images/comprobar.png" alt="check">
+                <input id="aEmail" class="campos" type="button" value="AñadirCorreo">
+                <p>Teléfono:</p>
+                <input id="tlf" class="campos" type="text" onchange="" name="Telefono" placeholder="999 999 999" required
+                    pattern="^[0-9]{3}[\s-]?[0-9]{3}[\s-]?[0-9]{3}$" onblur="validaTlf()" />
+                <img id="checkTlf" class="check" src="images/comprobar.png" alt="check">
                 <input id="aTlf" type="button" value="AñadirTelefono">
             </div>
             <input class="icon-derecha" type="image" onclick="muestraCredenciales()" src="images/flecha-derecha.png"
@@ -99,12 +46,12 @@
 
         <fieldset id="credenciales">
             <div>
-                <h3>Usuario</h3>
+                <p>Usuario</p>
                 <input type="text" name="usuario" placeholder="Nombre de usuario" minlength="5" maxlength="40" required
                     pattern="[A-Za-z0-9]+" />
-                <h3>Contraseña</h3>
+                <p>Contraseña</p>
                 <input type="text" name="Contrasenia" placeholder="Contraseña" maxlength="35" required />
-                <h3>Repite Contraseña</h3>
+                <p>Repite Contraseña</p>
                 <input type="text" name="Contrasenia2" placeholder="Repite Contraseña" maxlength="35" required />
             </div>
             <input class="icon-derecha" type="image" onclick="muestraCuenta()" src="images/flecha-derecha.png"
@@ -115,13 +62,14 @@
 
         <fieldset id="cuenta">
             <div>
-                <h3>IBAN</h3>
+                <p>IBAN</p>
                 <input id="iban" type="text" name="IBAN" placeholder="ES21 14650100722030876293" required />
-                <h3>SWIFT</h3>
-                <input id="swift" type="text" name="SWIFT" onchange="validaCuenta()" placeholder="Contraseña" maxlength="35" required />
+                <p>SWIFT</p>
+                <input id="swift" type="text" name="SWIFT" onchange="" placeholder="Contraseña" maxlength="35"
+                    required />
             </div>
-            <input class="icon-derecha" type="image" onclick="enviar()" src="images/cheque.png"
-                alt="flecha derecha" value="enviar">
+            <input class="icon-derecha" type="image" onclick="ahora()" src="images/cheque.png" alt="flecha derecha"
+                value="enviar">
             <input class="icon-izq" type="image" onclick="atrasCuenta()" src="images/flecha-izq.png"
                 alt="flecha izquierda" value="atras">
         </fieldset>

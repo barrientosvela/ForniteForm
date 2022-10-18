@@ -16,7 +16,7 @@ label {
     margin: auto;
 }
 
-div {    
+div {
     display: block;
     margin: auto;
 }
@@ -46,6 +46,22 @@ fieldset {
     width: 15%;
     float: left;
 }
-#credenciales,#cuenta{
+
+#credenciales,
+#cuenta {
     display: none;
+}
+
+.check {
+    display: none;
+    width: 5%;
+    float: inline-start;
+}
+
+input {
+    text-align: center;
+    float: right;
+}
+.centro{
+    margin-left: 25%;
 }
