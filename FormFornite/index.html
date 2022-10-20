@@ -14,45 +14,43 @@
     <div class="logo">
         <img class="logoCompleto" src="images/logoCompleto.png" alt="fortnite en letras blancas">
     </div>
-    <form>
+    <form id="formCompleto">
         <fieldset id="datosPers">
             <div class="centro">
                 <p>Nombre:</p>
                 <input type="text" class="campos" name="nombre" required pattern="[a-zA-Z]{4,15}" />
                 <p>Apellidos:</p>
                 <input type="text" class="campos" name="apellidos" required pattern="[a-zA-Z ]{5,50}" />
-                <div id="FechaNacimiento">
-                    <p>Fecha de nacimiento:</p>
-                    <input id="anio" type="date" class="campos" name="anio" required />
-                    <img id="checkAnio" class="check" src="images/comprobar.png" alt="check">
-                </div>
+                <p>Fecha de nacimiento:</p>
+                <input id="anio" type="date" class="campos" name="anio" required />
                 <p>DNI:</p>
-                <input type="text" id="dni" class="campos" required pattern="^[0-9]{8}[- ]?[A-Z]{1}$" onblur="validaDNI()" />
+                <input type="text" id="dni" class="campos" required pattern="^[0-9]{8}[- ]?[A-Z]{1}$"
+                    onblur="validaDNI()" />
                 <img id="checkDNI" class="check" src="images/comprobar.png" alt="check">
                 <p>Email:</p>
                 <input type="mail" id="email" class="campos" placeholder="ejemplo@ejemplo.com" required
                     pattern="^[a-zA-Z0-9]{1,64}\S+@\D\S+\.\D\S+$" onblur="validaEmail()" />
                 <img id="checkEmail" class="check" src="images/comprobar.png" alt="check">
-                <input id="aEmail" class="campos" type="button" value="AñadirCorreo">
                 <p>Teléfono:</p>
-                <input id="tlf" class="campos" type="text" onchange="" name="Telefono" placeholder="999 999 999" required
-                    pattern="^[0-9]{3}[\s-]?[0-9]{3}[\s-]?[0-9]{3}$" onblur="validaTlf()" />
+                <input id="tlf" class="campos" type="text" onchange="" name="Telefono" placeholder="999 999 999"
+                    required pattern="^[0-9]{3}[\s-]?[0-9]{3}[\s-]?[0-9]{3}$" onblur="validaTlf()" />
                 <img id="checkTlf" class="check" src="images/comprobar.png" alt="check">
-                <input id="aTlf" type="button" value="AñadirTelefono">
             </div>
             <input class="icon-derecha" type="image" onclick="muestraCredenciales()" src="images/flecha-derecha.png"
                 alt="flecha derecha" value="validar">
         </fieldset>
 
         <fieldset id="credenciales">
-            <div>
+            <div class="centro">
                 <p>Usuario</p>
                 <input type="text" name="usuario" placeholder="Nombre de usuario" minlength="5" maxlength="40" required
                     pattern="[A-Za-z0-9]+" />
                 <p>Contraseña</p>
-                <input type="text" name="Contrasenia" placeholder="Contraseña" maxlength="35" required />
+                <input id="c1" type="text" name="Contrasenia" placeholder="Contraseña" maxlength="35" required />
+                <img id="checkPass" class="check" src="images/comprobar.png" alt="check">
                 <p>Repite Contraseña</p>
-                <input type="text" name="Contrasenia2" placeholder="Repite Contraseña" maxlength="35" required />
+                <input id="c2" type="text" name="Contrasenia2" placeholder="Repite Contraseña" maxlength="35" required
+                    onblur="validaContrasena()" />
             </div>
             <input class="icon-derecha" type="image" onclick="muestraCuenta()" src="images/flecha-derecha.png"
                 alt="flecha derecha" value="validar">
@@ -61,14 +59,14 @@
         </fieldset>
 
         <fieldset id="cuenta">
-            <div>
+            <div class="centro">
                 <p>IBAN</p>
-                <input id="iban" type="text" name="IBAN" placeholder="ES21 14650100722030876293" required />
+                <input id="iban" type="text" name="IBAN" placeholder="ES21 14650100722030876293" required
+                    onblur="validaCuenta()" />
                 <p>SWIFT</p>
-                <input id="swift" type="text" name="SWIFT" onchange="" placeholder="Contraseña" maxlength="35"
-                    required />
+                <input id="swift" type="text" name="SWIFT" placeholder="AAAAESMMXXX" required />
             </div>
-            <input class="icon-derecha" type="image" onclick="ahora()" src="images/cheque.png" alt="flecha derecha"
+            <input class="icon-derecha" type="image" onclick="enviar()" src="images/cheque.png" alt="flecha derecha"
                 value="enviar">
             <input class="icon-izq" type="image" onclick="atrasCuenta()" src="images/flecha-izq.png"
                 alt="flecha izquierda" value="atras">
